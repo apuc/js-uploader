@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     <script src="lib/Uploader.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function(){
+        document.addEventListener('DOMContentLoaded', function () {
             var up = new Uploader();
             up.init({
                 btnSelect: '#btnSel',
@@ -26,6 +26,7 @@
                 itemsCountBox: '#itemsCountBox',
                 maxSize: 2,
                 itemsCount: 1,
+                filesExt: ['jpg', 'psd', 'png', 'eps'],
                 uploadOnprogress: function (progress, item) {
                     //console.log(progress);
                     //console.log(item);
@@ -46,7 +47,7 @@
                     formData.append('test', 'test');
                 },
                 maxSizeError: function (name, size) {
-                    console.log('Файл слишком большой', name, Math.round((size / 1024 / 1024)*100)/100 + ' мб.' );
+                    console.log('Файл слишком большой', name, Math.round((size / 1024 / 1024) * 100) / 100 + ' мб.');
                 }
             });
             up.indexItems();
@@ -70,7 +71,9 @@
         <div class="itemTitle">DSC_2870.jpg</div>
         <div class="itemImg"><img src="img/DSC_2870.jpg"></div>
         <div class="itemSize">1440565</div>
-        <div class="actions"><div><span class="delItem">Удалить</span></div></div>
+        <div class="actions">
+            <div><span class="delItem">Удалить</span></div>
+        </div>
     </div>
 </div>
 </body>
